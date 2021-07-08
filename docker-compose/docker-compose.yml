@@ -1,0 +1,16 @@
+version: '3.7'
+services: 
+  service-eureka-server:
+    image: service-eureka:v1
+    ports:
+      - "8761:8761"
+    restart: always
+    network_mode: "host"
+  service-products:
+    image: service-products:v2
+    ports:
+      - "8001:8001"
+    restart: always
+    network_mode: "host"
+networks:
+  host:
